@@ -1,12 +1,28 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <h1>hello</h1>
-</body>
-</html>
+@extends('app')
+
+@section('title', '記事一覧')
+
+@section('content')
+  <!--Navbar -->
+  @include('nav')
+  <!--/.Navbar -->
+
+  <div class="container">
+    <h2 class="pt-4 pb-2 border-bottom">記事一覧</h2>
+    <div class="row py-4 px-2 d-flex flex-nowrap overflow-x">
+      <div class="col-4">
+        @include('card')
+      </div>
+      <div class="col-4">
+        @include('card')
+      </div>
+      <div class="col-4">
+        @include('card')
+      </div>
+      <div class="col-4">
+        @include('card')
+      </div>
+
+    </div>
+  </div>
+@endsection
