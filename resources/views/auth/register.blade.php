@@ -23,8 +23,11 @@
 
                     <!-- name -->
                     <div class="md-form">
-                        <input type="text" id="materialRegisterFormFirstName" name="name" class="form-control" required value="{{ old('name') }}">
-                        <label for="materialRegisterFormFirstName">ユーザー名</label>
+                        <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" required value="{{ old('name') }}">
+                        <label for="name">ユーザー名</label>
+                        @error('name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                         <small class="form-text text-muted mb-4">
                             3〜20文字以内
                         </small>
@@ -32,14 +35,20 @@
 
                     <!-- E-mail -->
                     <div class="md-form">
-                        <input type="email" id="materialRegisterFormEmail" name="email" class="form-control" required value="{{ old('email') }}">
-                        <label for="materialRegisterFormEmail">メールアドレス</label>
+                        <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror" required value="{{ old('email') }}">
+                        <label for="email">メールアドレス</label>
+                        @error('email')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <!-- Password -->
                     <div class="md-form">
-                        <input type="password" id="materialRegisterFormPassword" name="password" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock" required>
-                        <label for="materialRegisterFormPassword">パスワード</label>
+                        <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror" aria-describedby="materialRegisterFormPasswordHelpBlock" required>
+                        <label for="password">パスワード</label>
+                        @error('password')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                         <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
                             8文字以上で設定してください
                         </small>
@@ -47,8 +56,11 @@
 
                     <!-- Password Confirm -->
                     <div class="md-form">
-                        <input type="password" id="materialRegisterFormPasswordConfirm" name="password_confirmation" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock" required>
-                        <label for="materialRegisterFormPasswordConfirm">パスワード（確認用）</label>
+                        <input type="password" id="password-confirmation" name="password_confirmation" class="form-control @error('password-confirmation') is-invalid @enderror" aria-describedby="materialRegisterFormPasswordHelpBlock" required>
+                        <label for="password-confirmation">パスワード（確認用）</label>
+                        @error('password-confirmation')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <!-- Sign up button -->
