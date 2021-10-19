@@ -9,7 +9,7 @@
     <ul class="navbar-nav ml-auto">
       @guest
       <li class="nav-item">
-        <a class="nav-link" href="#">ログイン
+        <a class="nav-link" href="{{ route('login') }}">ログイン
           <span class="sr-only">(current)</span>
         </a>
       </li>
