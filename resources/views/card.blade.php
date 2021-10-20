@@ -2,18 +2,21 @@
 <div class="card promoting-card w-auto">
 
   <!-- Card content -->
-  <div class="card-body d-flex flex-row">
+  <div class="card-body pb-3">
 
-    <!-- Avatar -->
-    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg" class="rounded-circle mr-3" height="50px" width="50px" alt="avatar">
+    <!-- Title -->
+      <h4 class="h6 card-title font-weight-bold mb-2">{{ $article->title }}</h4>
 
     <!-- Content -->
-    <div>
+    <div class="d-flex">
+      <!-- Avatar -->
+    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg" class="rounded-circle d-inline-block mr-3" height="30px" width="30px" alt="avatar">
 
-      <!-- Title -->
-      <h4 class="card-title font-weight-bold mb-2">New spicy meals</h4>
-      <!-- Subtitle -->
-      <p class="card-text"><i class="far fa-clock pr-2"></i>07/24/2018</p>
+      <!-- Subtitle & username -->
+      <div>
+        <p class="small text-black-50 m-0"><i class="far fa-clock pr-2"></i>{{ $article->created_at->format('Y/m/d') }}</p>
+        <p class="small text-black-50 m-0">{{ $article->user->name }}</p>
+      </div>
 
     </div>
 
@@ -28,18 +31,11 @@
   </div>
 
   <!-- Card content -->
-  <div class="card-body">
+  <div class="card-body p-1">
+    <span class="p-1 mt-1 ml-2 badge badge-secondary">{{ $article->category->name }}</span>
 
-    <div class="collapse-content">
-
-      <!-- Text -->
-      <p class="card-text collapse" id="collapseContent">Recently, we added several exotic new dishes to our restaurant menu. They come from countries such as Mexico, Argentina, and Spain. Come to us, have some delicious wine and enjoy our juicy meals from around the world.</p>
-      <!-- Button -->
-      <a class="btn btn-flat red-text p-1 my-1 mr-0 mml-1 collapsed" data-toggle="collapse" href="#collapseContent" aria-expanded="false" aria-controls="collapseContent">READ MORE</a>
-      <i class="fas fa-share-alt text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top" title="Share this post"></i>
-      <i class="fas fa-heart text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip" data-placement="top" title="I like it"></i>
-
-    </div>
+    <i class="fas fa-share-alt text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top" title="Share this post"></i>
+    <i class="fas fa-heart text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip" data-placement="top" title="I like it"></i>
 
   </div>
 
