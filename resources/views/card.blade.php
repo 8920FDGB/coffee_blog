@@ -5,7 +5,7 @@
   <div class="card-body pb-3">
 
     <!-- Title -->
-      <h4 class="h6 card-title font-weight-bold mb-2">{{ $article->title }}</h4>
+      <h4 class="h6 card-title font-weight-bold mb-2"><a class="text-dark" href="{{ route('articles.show', ['article' => $article]) }}">{{ $article->title }}</a></h4>
 
     <!-- Content -->
     <div class="d-flex">
@@ -25,7 +25,7 @@
   <!-- Card image -->
   <div class="view overlay">
     <img class="card-img-top rounded-0" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/full page/2.jpg" alt="Card image cap">
-    <a href="#!">
+    <a href="{{ route('articles.show', ['article' => $article]) }}">
       <div class="mask rgba-white-slight"></div>
     </a>
   </div>
