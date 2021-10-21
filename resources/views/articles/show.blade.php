@@ -9,6 +9,10 @@
   <div class="container">
     <div class="row">
       <div class="col mx-auto mt-5 col-12 col-md-10 col-lg-7 col-xl-6">
+        <div class="pb-3 mb-4">
+          <img class="w-100" src="{{ asset('storage/' . $article->thumbnail) }}" alt="">
+        </div>
+
         {{-- blog title --}}
         <h2 class="font-weight-bold py-3 mb-4">{{ $article->title }}</h2>
 

@@ -24,8 +24,8 @@
 
   <!-- Card image -->
   <div class="view overlay">
-    <img class="card-img-top rounded-0" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/full page/2.jpg" alt="Card image cap">
-    <a href="{{ route('articles.show', ['article' => $article]) }}">
+    <img class="card-img-top rounded-0" src="{{ asset('storage/' . $article->thumbnail) }}" alt="Card image cap">
+    {{-- <a href="{{ route('articles.show', ['article' => $article]) }}"> --}}
       <div class="mask rgba-white-slight"></div>
     </a>
   </div>
