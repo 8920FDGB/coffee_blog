@@ -18,4 +18,5 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 // 記事関連のルーティング
-Route::get('/', 'ArticleController@index')->name('index');
+Route::get('/', 'ArticleController@index')->name('articles.index');
+Route::resource('/articles', 'ArticleController')->except(['index']);

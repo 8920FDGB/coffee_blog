@@ -78,7 +78,7 @@
         </div>
         <!-- Material form register -->
 
-        <a class="pt-2 d-block" href="{{ route('index') }}">トップページへ戻る</a>
+        <a class="pt-2 d-block" href="{{ route('articles.index') }}">トップページへ戻る</a>
       </div>
     </div>
   </div>
