@@ -41,10 +41,8 @@ class ArticleController extends Controller
     public function store(ArticleRequest $request, Article $article)
     {
         // 新規投稿を作成
-        $article->title = $request->title;
-        $article->body = $request->body;
+        $article->fill($request->all());
         $article->thumbnail = 'sample02.jpg';
-        $article->category_id = $request->category_id;
         $article->user_id = $request->user()->id;
 
         // 新規投稿を保存

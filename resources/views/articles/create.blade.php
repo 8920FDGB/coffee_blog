@@ -20,7 +20,7 @@
 
               <div class="md-form">
                 <label for="title" class="mdb-main-label">タイトル</label>
-                <input type="text" name="title" id="title" class="form-control @error('password') is-invalid @enderror" required value="{{ old('title') }}">
+                <input type="text" name="title" id="title" class="form-control px-2 @error('password') is-invalid @enderror" required value="{{ old('title') }}">
                 @error('title')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -35,7 +35,7 @@
 
                   @error('category_id')
                     <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                  @enderror
                 </select>
 
               </div>
