@@ -25,7 +25,7 @@ class ArticleRequest extends FormRequest
     {
         return [
             'title' => 'required|max:50',
-            'category' => 'required',
+            'category_id' => 'required',
             'body' => 'required|max:2000',
             // 'thumbnail' => '',
         ];
@@ -35,7 +35,7 @@ class ArticleRequest extends FormRequest
     {
         return [
             'title' => 'タイトル',
-            'category' => 'カテゴリー',
+            'category_id' => 'カテゴリー',
             'body' => '本文',
             // 'thumbnail' => 'サムネイル用画像',
         ];

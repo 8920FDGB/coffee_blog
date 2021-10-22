@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Category;
+use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -35,5 +36,20 @@ class ArticleController extends Controller
         $categories = Category::all();
 
         return view('articles.create', ['categories' => $categories]);
+    }
+
+    public function store(ArticleRequest $request, Article $article)
+    {
+        // 新規投稿を作成
+        $article->title = $request->title;
+        $article->body = $request->body;
+        $article->thumbnail = 'sample02.jpg';
+        $article->category_id = $request->category_id;
+        $article->user_id = $request->user()->id;
+
+        // 新規投稿を保存
+        $article->save();
+
+        return redirect()->route('articles.index');
     }
 }
