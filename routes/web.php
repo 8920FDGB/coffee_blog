@@ -19,4 +19,5 @@ Auth::routes();
 
 // 記事関連のルーティング
 Route::get('/', 'ArticleController@index')->name('articles.index');
-Route::resource('/articles', 'ArticleController')->except(['index']);
+Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
+Route::resource('/articles', 'ArticleController')->only(['show']);
