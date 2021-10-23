@@ -25,6 +25,13 @@
             <p class="small text-black-50 m-0"><i class="far fa-clock pr-2"></i>{{ $article->created_at->format('Y/m/d') }}</p>
             <p class="small text-black-50 m-0">{{ $article->user->name }}</p>
           </div>
+
+          @if (Auth::id() === $article->user_id)
+              <div class="ml-auto">
+                <a href="{{ route('articles.edit', ['article' => $article]) }}" class="btn btn-outline-brown rounded-lg">記事を編集</a>
+                <a href="" class="btn btn-brown rounded-lg">記事を削除</a>
+              </div>
+          @endif
         </div>
 
         {{-- body --}}

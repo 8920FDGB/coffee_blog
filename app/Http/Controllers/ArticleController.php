@@ -50,4 +50,14 @@ class ArticleController extends Controller
 
         return redirect()->route('articles.index');
     }
+
+    public function edit(Article $article)
+    {
+        $categories = Category::all();
+
+        return view('articles.edit', [
+            'article' => $article,
+            'categories' => $categories,
+        ]);
+    }
 }
