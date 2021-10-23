@@ -42,7 +42,7 @@ class ArticleController extends Controller
     {
         // 新規投稿を作成
         $article->fill($request->all());
-        $article->thumbnail = 'sample02.jpg';
+        $article->thumbnail = $request->thumbnail->store('', 'public');
         $article->user_id = $request->user()->id;
 
         // 新規投稿を保存

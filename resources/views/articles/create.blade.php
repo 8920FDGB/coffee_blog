@@ -15,7 +15,7 @@
               ブログ記事を作成
             </div>
 
-            <form action="{{ route('articles.store') }}" method="post">
+            <form action="{{ route('articles.store') }}" method="post" enctype="multipart/form-data">
               @csrf
 
               <div class="md-form">
