@@ -29,7 +29,41 @@
           @if (Auth::id() === $article->user_id)
               <div class="ml-auto">
                 <a href="{{ route('articles.edit', ['article' => $article]) }}" class="btn btn-outline-brown rounded-lg">記事を編集</a>
-                <a href="" class="btn btn-brown rounded-lg">記事を削除</a>
+                <button type="button" href="" class="btn btn-brown rounded-lg" data-toggle="modal" data-target="#centralModal">
+                  記事を削除
+                </button>
+              </div>
+
+              <!-- Central Modal Medium Danger -->
+              <div class="modal fade" id="centralModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-notify" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header brown lighten-2">
+                      <p class="heading lead">ブログ削除</p>
+
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                      </button>
+                    </div>
+
+                    <!--Body-->
+                    <div class="modal-body">
+                      <div class="text-center">
+                        <p>ブログを削除します。<br>よろしいですか？</p>
+                      </div>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                      <a type="button" class="btn btn-outline-brown rounded-lg waves-effect" data-dismiss="modal">キャンセル</a>
+                      <a type="button" class="btn btn-danger rounded-lg">削除する</a>
+                    </div>
+                  </div>
+                  <!--/.Content-->
+                </div>
               </div>
           @endif
         </div>
