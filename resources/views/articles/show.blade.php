@@ -50,17 +50,20 @@
                     </div>
 
                     <!--Body-->
-                    <div class="modal-body">
-                      <div class="text-center">
-                        <p>ブログを削除します。<br>よろしいですか？</p>
+                    <form action="{{ route('articles.destroy', ['article' => $article]) }}" method="POST">
+                      @csrf
+                      @method('DELETE')
+                      <div class="modal-body">
+                        <div class="text-center">
+                          <p>ブログを削除します。<br>よろしいですか？</p>
+                        </div>
                       </div>
-                    </div>
-
-                    <!--Footer-->
-                    <div class="modal-footer justify-content-center">
-                      <a type="button" class="btn btn-outline-brown rounded-lg waves-effect" data-dismiss="modal">キャンセル</a>
-                      <a type="button" class="btn btn-danger rounded-lg">削除する</a>
-                    </div>
+                      <!--Footer-->
+                      <div class="modal-footer justify-content-center">
+                        <a type="button" class="btn btn-outline-brown rounded-lg waves-effect" data-dismiss="modal">キャンセル</a>
+                        <button type="submit" class="btn btn-danger rounded-lg">削除する</button>
+                      </div>
+                    </form>
                   </div>
                   <!--/.Content-->
                 </div>
