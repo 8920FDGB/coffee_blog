@@ -60,4 +60,15 @@ class ArticleController extends Controller
             'categories' => $categories,
         ]);
     }
+
+    public function update(ArticleRequest $request, Article $article)
+    {
+        // 編集した投稿を作成
+        $article->fill($request->all());
+        $article->thumbnail = $request->thumbnail->store('', 'public');
+        // 編集した投稿を保存
+        $article->save();
+
+        return redirect()->route('articles.show', ['article' => $article]);
+    }
 }

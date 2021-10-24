@@ -15,9 +15,9 @@
               ブログ記事を編集
             </div>
 
-            <form action="{{ route('articles.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('articles.update', ['article' => $article]) }}" method="post" enctype="multipart/form-data">
               @csrf
-
+              @method('PATCH')
               <div class="md-form">
                 <label for="title" class="mdb-main-label">タイトル</label>
                 <input type="text" name="title" id="title" class="form-control px-2 @error('password') is-invalid @enderror" required value="{{ $article->title }}">
@@ -54,7 +54,7 @@
                 <label for="thumbnail" class="btn btn-brown">ファイルを選択</label>
                 <input type="file" name="thumbnail" id="thumbnail" accept=".png, .jpg, .jpeg, .pdf, .doc" class="d-none">
               </div>
-              <button type="submit" class="btn btn-block btn-brown rounded-lg">投稿する</button>
+              <button type="submit" class="btn btn-block btn-brown rounded-lg">更新する</button>
             </form>
           </div>
         </div>
