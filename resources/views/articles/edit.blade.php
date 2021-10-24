@@ -30,7 +30,9 @@
                 <select class="browser-default custom-select @error('password') is-invalid @enderror" name="category_id" id="category" required>
                   <option disabled selected>カテゴリー</option>
                   @foreach ($categories as $category)
-                      <option value="{{ $category->id }}">{{ $category->name }}</option>
+                      <option value="{{ $category->id }}" @if ($category->id === $article->category_id) selected @endif>
+                        {{ $category->name }}
+                      </option>
                   @endforeach
 
                   @error('category_id')
