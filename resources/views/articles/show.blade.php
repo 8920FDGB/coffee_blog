@@ -73,7 +73,7 @@
 
         <div>
           <i class="fas fa-heart {{ $article->isLikedBy(Auth::user()) ? 'red-text' : 'text-muted' }} p-1 mb-5 mr-1" data-toggle="tooltip" data-placement="top" title="I like it"></i>
-          <span>10</span>
+          <span>{{ $article->count_likes }}</span>
         </div>
 
         {{-- body --}}

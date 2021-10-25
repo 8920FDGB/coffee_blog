@@ -35,8 +35,8 @@
     <span class="p-1 mt-1 ml-2 badge badge-secondary">{{ $article->category->name }}</span>
 
     <i class="fas fa-share-alt text-muted float-right p-1 my-1" data-toggle="tooltip" data-placement="top" title="Share this post"></i>
-    <i class="fas fa-heart text-muted float-right p-1 my-1 mr-3" data-toggle="tooltip" data-placement="top" title="I like it"></i>
-
+    <span class="float-right mt-1 mr-2">{{ $article->count_likes }}</span>
+    <i class="fas fa-heart text-muted float-right p-1 my-1 mr-1" data-toggle="tooltip" data-placement="top" title="I like it"></i>
   </div>
 
 </div>

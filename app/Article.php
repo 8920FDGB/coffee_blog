@@ -39,4 +39,10 @@ class Article extends Model
             ? (bool) $this->likes->where('id', $user->id)->count()
             : false;
     }
+
+    // いいね数を取得する
+    public function getCountLikesAttribute(): int
+    {
+        return $this->likes->count();
+    }
 }
