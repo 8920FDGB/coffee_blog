@@ -83,4 +83,19 @@ class ArticleController extends Controller
 
         return redirect()->route('articles.index');
     }
+
+    public function like(Request $request, Article $article)
+    {
+        $article->likes()->detach($request->user()->id);
+        $article->likes()->attach($request->user()->id);
+
+        return redirect()->back();
+    }
+
+    public function unlike(Request $request, Article $article)
+    {
+        $article->likes()->detach($request->user()->id);
+
+        return redirect()->back();
+    }
 }

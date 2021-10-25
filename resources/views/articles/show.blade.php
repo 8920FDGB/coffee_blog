@@ -71,8 +71,18 @@
           @endif
         </div>
 
-        <div>
-          <i class="fas fa-heart {{ $article->isLikedBy(Auth::user()) ? 'red-text' : 'text-muted' }} p-1 mb-5 mr-1" data-toggle="tooltip" data-placement="top" title="I like it"></i>
+        <div class="mb-5">
+          <form action="{{ route('articles.like', ['article' => $article]) }}" method="post" class="d-inline p-0">
+            @csrf
+            @if ($article->isLikedBy(Auth::user()))
+              @method('DELETE')
+            @else
+              @method('PUT')
+            @endif
+            <button type="submit" class="btn m-0 p-0 shadow-none">
+              <i class="fas fa-heart {{ $article->isLikedBy(Auth::user()) ? 'red-text' : 'text-muted' }} p-1 mr-1" data-toggle="tooltip" data-placement="top" title="I like it"></i>
+            </button>
+          </form>
           <span>{{ $article->count_likes }}</span>
         </div>
 
