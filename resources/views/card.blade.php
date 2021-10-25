@@ -10,12 +10,18 @@
     <!-- Content -->
     <div class="d-flex">
       <!-- Avatar -->
-    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg" class="rounded-circle d-inline-block mr-3" height="30px" width="30px" alt="avatar">
+      <a href="{{ route('users.show', ['id' => $article->user->id]) }}">
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg" class="rounded-circle d-inline-block mr-3" height="30px" width="30px" alt="avatar">
+      </a>
 
       <!-- Subtitle & username -->
       <div>
         <p class="small text-black-50 m-0"><i class="far fa-clock pr-2"></i>{{ $article->created_at->format('Y/m/d') }}</p>
-        <p class="small text-black-50 m-0">{{ $article->user->name }}</p>
+        <p class="small text-black-50 m-0">
+          <a href="{{ route('users.show', ['id' => $article->user->id]) }}" class="text-muted">
+            {{ $article->user->name }}
+          </a>
+        </p>
       </div>
 
     </div>
