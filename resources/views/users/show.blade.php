@@ -14,8 +14,14 @@
       <div class="col-8 mt-2">
         <div class="d-flex">
           <p class="h2">{{ $user->name }}</p>
-          @if ($user->id !== Auth::user()->id)
-            <a href="#" class="btn btn-outline-primary ml-auto py-3 px-4"><i class="fas fa-user-plus mr-2"></i>フォロー</a>
+          {{-- ログイン中かつ自分でない場合にフォローボタンを表示 --}}
+          @if (Auth::user() && $user->id !== Auth::user()->id)
+          {{-- フォロー中かそうでないかでボタンを出し分け --}}
+            @if ($user->isFollowedBy(Auth::user()))
+              <a href="#" class="btn btn-primary ml-auto py-3 px-4"><i class="fas fa-user-check mr-2"></i>フォロー中</a>
+            @else
+              <a href="#" class="btn btn-outline-primary ml-auto py-3 px-4"><i class="fas fa-user-plus mr-2"></i>フォロー</a>
+            @endif
           @endif
         </div>
         <div>
