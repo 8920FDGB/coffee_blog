@@ -30,4 +30,8 @@ Route::prefix('articles')->name('articles.')->group(function () {
 // ユーザー関連のルーティング
 Route::prefix('users')->name('users.')->group(function () {
     Route::get('/{id}', 'UserController@show')->name('show');
+    Route::middleware(['auth'])->group(function () {
+        Route::put('/{id}/follow', 'UserController@follow')->name('follow');
+        Route::delete('/{id}/follow', 'UserController@unfollow')->name('unfollow');
+    });
 });
