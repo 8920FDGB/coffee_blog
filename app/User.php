@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -38,8 +39,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // 記事モデルへのリレーション
     public function articles(): HasMany
     {
         return $this->hasMany('App\Article');
+    }
+
+    // フォロー機能のためのユーザーとユーザーのリレーション
+    public function followers(): BelongsToMany
+    {
+        return $this->belongsToMany('App\User', 'follows', 'followee_id', 'follower_id')->withTimestamps();
+    }
+
+    // あるユーザーをフォロー中か判定する
+    public function isFollowedBy(?User $user): bool
+    {
+        return $user
+            ? (bool) $this->followers->where('id', $user->id)->count();
+            : false;
     }
 }
