@@ -45,6 +45,12 @@ class User extends Authenticatable
         return $this->hasMany('App\Article');
     }
 
+    // likesテーブルを中間テーブルとした、Articleモデルとのリレーション（多対多）
+    public function likes(): BelongsToMany
+    {
+        return $this->belongsToMany('App\Article', 'likes')->withTimestamps();
+    }
+
     // フォロー機能のためのユーザーとユーザーのリレーション
     public function followers(): BelongsToMany
     {
@@ -63,5 +69,13 @@ class User extends Authenticatable
         return $user
             ? (bool) $this->followers->where('id', $user->id)->count()
             : false;
+    }
+
+    // ユーザーがいいねしたブログ記事を取得する
+    public function getLikesArticlesAttribute()
+    {
+        $articles = $this->likes;
+
+        return $articles;
     }
 }

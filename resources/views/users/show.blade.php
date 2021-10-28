@@ -58,6 +58,7 @@
     </li>
   </ul>
   <div class="tab-content p-3 " id="myClassicTabContent">
+    {{-- 投稿記事 --}}
     <div class="tab-pane fade active show" id="profile-classic" role="tabpanel" aria-labelledby="profile-tab-classic">
       <div class="row">
         @foreach ($user->articles as $article)
@@ -82,11 +83,19 @@
           </div>
       </div>
     </div>
+
+    {{-- いいねした記事 --}}
     <div class="tab-pane fade" id="follow-classic" role="tabpanel" aria-labelledby="follow-tab-classic">
-      <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-        aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-        quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+      <div class="row">
+        @foreach ($user->likes_articles as $likes_article)
+            <div class="col-3 mb-3">
+              @include('card', ['article' => $likes_article])
+            </div>
+        @endforeach
+      </div>
     </div>
+
+    {{-- フォロー --}}
     <div class="tab-pane fade" id="contact-classic" role="tabpanel" aria-labelledby="contact-tab-classic">
       <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
         deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
@@ -95,6 +104,8 @@
         eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas
         assumenda est, omnis dolor repellendus. </p>
     </div>
+
+    {{-- フォロワー --}}
     <div class="tab-pane fade" id="awesome-classic" role="tabpanel" aria-labelledby="awesome-tab-classic">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
