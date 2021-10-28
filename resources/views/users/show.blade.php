@@ -98,9 +98,9 @@
     {{-- フォロー --}}
     <div class="tab-pane fade" id="contact-classic" role="tabpanel" aria-labelledby="contact-tab-classic">
       <div class="row">
-        @foreach ($user->followings as $user)
+        @foreach ($user->followings as $followings)
           <div class="col-12 mb-2">
-            @include('card_user', ['user' => $user])
+            @include('card_user', ['user' => $followings])
           </div>
         @endforeach
       </div>
@@ -108,11 +108,14 @@
 
     {{-- フォロワー --}}
     <div class="tab-pane fade" id="awesome-classic" role="tabpanel" aria-labelledby="awesome-tab-classic">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-        deserunt mollit anim id est laborum.</p>
+      <div class="row">
+        {{-- {{ $user->followers }} --}}
+        @foreach ($user->followers as $followers)
+          <div class="col-12 mb-2">
+            @include('card_user', ['user' => $followers])
+          </div>
+        @endforeach
+      </div>
     </div>
   </div>
 
