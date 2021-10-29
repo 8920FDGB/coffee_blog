@@ -30,8 +30,8 @@
           </form>
         </div>
         <div>
-          <span class="text-muted mr-2">10 フォロー</span>
-          <span class="text-muted mr-2">10 フォロワー</span>
+          <span class="text-muted mr-2">{{ $user->count_followings }} フォロー</span>
+          <span class="text-muted mr-2">{{ $user->count_followers }} フォロワー</span>
         </div>
       </div>
     </div>
