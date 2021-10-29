@@ -19,11 +19,11 @@
         {{-- profile --}}
         <div class="d-flex pb-3 mb-2">
           <!-- Avatar -->
-          <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg" class="rounded-circle d-inline-block mr-3" height="30px" width="30px" alt="avatar">
+          <a href="{{ route('users.show', ['id' => $article->user_id]) }}"><img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg" class="rounded-circle d-inline-block mr-3" height="30px" width="30px" alt="avatar"></a>
           <!-- Subtitle & username -->
           <div class="">
             <p class="small text-black-50 m-0"><i class="far fa-clock pr-2"></i>{{ $article->created_at->format('Y/m/d') }}</p>
-            <p class="small text-black-50 m-0">{{ $article->user->name }}</p>
+            <p class="small text-black-50 m-0"><a href="{{ route('users.show', ['id' => $article->user_id]) }}" class="text-muted">{{ $article->user->name }}</a></p>
           </div>
 
           @if (Auth::id() === $article->user_id)
