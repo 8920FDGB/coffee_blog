@@ -20,37 +20,43 @@
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
       <div class="view">
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
-          alt="First slide" height="260px">
+        <div class="bg-image" style="
+          background-image: url({{ asset('storage/slide/slide01.jpg') }});
+          height: 260px; background-size: cover; background-position: center; ">
+        </div>
         <div class="mask rgba-black-light"></div>
       </div>
       <div class="carousel-caption">
-        <h3 class="h3-responsive">Light mask</h3>
-        <p>First text</p>
+        <h3 class="h3-responsive">あなたのコーヒーを語ろう</h3>
+        <p>味も 場所も 体験も</p>
       </div>
     </div>
     <div class="carousel-item">
       <!--Mask color-->
       <div class="view">
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg"
-          alt="Second slide" height="260px">
-        <div class="mask rgba-black-strong"></div>
+        <div class="bg-image" style="
+          background-image: url({{ asset('storage/slide/slide02.jpg') }});
+          height: 260px; background-size: cover; background-position: center; ">
+        </div>
+        <div class="mask rgba-black-light"></div>
       </div>
       <div class="carousel-caption">
-        <h3 class="h3-responsive">Strong mask</h3>
-        <p>Secondary text</p>
+        <h3 class="h3-responsive">知りたいのは味だけじゃなく</h3>
+        <p>暮らしの中の１ページです</p>
       </div>
     </div>
     <div class="carousel-item">
       <!--Mask color-->
       <div class="view">
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg"
-          alt="Third slide" height="260px">
-        <div class="mask rgba-black-slight"></div>
+        <div class="bg-image" style="
+          background-image: url({{ asset('storage/slide/slide03.jpg') }});
+          height: 260px; background-size: cover; background-position: center; ">
+        </div>
+        <div class="mask rgba-black-light"></div>
       </div>
       <div class="carousel-caption">
-        <h3 class="h3-responsive">Slight mask</h3>
-        <p>Third text</p>
+        <h3 class="h3-responsive">行きつけは独占せずに</h3>
+        <p>みんなで共有してみましょう</p>
       </div>
     </div>
   </div>
