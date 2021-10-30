@@ -66,21 +66,6 @@
             @include('card', ['article' => $article])
           </div>
         @endforeach
-        <div class="col-3">
-            @include('card', ['article' => $article])
-          </div>
-          <div class="col-3">
-            @include('card', ['article' => $article])
-          </div>
-          <div class="col-3">
-            @include('card', ['article' => $article])
-          </div>
-          <div class="col-3">
-            @include('card', ['article' => $article])
-          </div>
-          <div class="col-3">
-            @include('card', ['article' => $article])
-          </div>
       </div>
     </div>
 
