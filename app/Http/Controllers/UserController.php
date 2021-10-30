@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -25,11 +26,10 @@ class UserController extends Controller
     // 更新処理
     public function update(Request $request, User $user)
     {
-        $request->name = $user->name;
-        $request->email = $user->email;
-        $user->save();
+        $user = Auth::user();
+        $user->fill($request->all())->save();
 
-        return redirect()->route('users.show', ['user' => $user]);
+        return redirect()->route('users.show', ['id' => $user->id]);
     }
 
     // フォロー処理
