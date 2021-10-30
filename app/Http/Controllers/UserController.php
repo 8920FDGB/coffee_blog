@@ -14,6 +14,24 @@ class UserController extends Controller
         return view('users.show', ['user' => $user]);
     }
 
+    // ユーザー情報編集画面表示
+    public function edit(int $id)
+    {
+        $user = User::findOrFail($id);
+
+        return view('users.edit', ['user' => $user]);
+    }
+
+    // 更新処理
+    public function update(Request $request, User $user)
+    {
+        $request->name = $user->name;
+        $request->email = $user->email;
+        $user->save();
+
+        return redirect()->route('users.show', ['user' => $user]);
+    }
+
     // フォロー処理
     public function follow(Request $request, int $id)
     {

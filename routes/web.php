@@ -31,6 +31,8 @@ Route::prefix('articles')->name('articles.')->group(function () {
 Route::prefix('users')->name('users.')->group(function () {
     Route::get('/{id}', 'UserController@show')->name('show');
     Route::middleware(['auth'])->group(function () {
+        Route::get('/{id}/edit', 'UserController@edit')->name('edit');
+        Route::put('/{id}', 'UserController@update')->name('update');
         Route::put('/{id}/follow', 'UserController@follow')->name('follow');
         Route::delete('/{id}/follow', 'UserController@unfollow')->name('follow');
     });
