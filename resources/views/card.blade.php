@@ -11,7 +11,7 @@
     <div class="d-flex">
       <!-- Avatar -->
       <a href="{{ route('users.show', ['id' => $article->user->id]) }}">
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg" class="rounded-circle d-inline-block mr-3" height="30px" width="30px" alt="avatar">
+        <img src="{{ asset('storage/' . $article->user->avatar) }}" class="rounded-circle d-inline-block mr-3" height="30px" width="30px" alt="avatar">
       </a>
 
       <!-- Subtitle & username -->

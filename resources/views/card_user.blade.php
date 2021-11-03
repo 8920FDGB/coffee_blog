@@ -1,6 +1,6 @@
 <div class="card p-3 d-flex flex-row">
   <div class="">
-    <a href="{{ route('users.show',  ['id' => $user->id]) }}"><img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg" class="rounded-circle d-inline-block mr-3" height="40px" width="40px" alt="avatar"></a>
+    <a href="{{ route('users.show',  ['id' => $user->id]) }}"><img src="{{ asset('storage/' . $user->avatar) }}" class="rounded-circle d-inline-block mr-3" height="40px" width="40px" alt="avatar"></a>
   </div>
   <div class="">
     <p class="h5 mb-1"><a href="{{ route('users.show', ['id' => $user->id]) }}" class="text-dark">{{ $user->name }}</a></p>

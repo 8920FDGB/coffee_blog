@@ -23,6 +23,7 @@ $factory->define(User::class, function (Faker $faker) {
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => 'testtest', // password
+        'avatar' => 'avatar/avatar01.jpg', // ユーザーのアバター画像のパス
         'remember_token' => Str::random(10),
     ];
 });

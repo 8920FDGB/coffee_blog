@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row justify-content-md-center pt-4 mt-5">
       <div class="col-2">
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg" class="rounded-circle d-inline-block mr-3" height="120px" width="120px" alt="avatar">
+        <img src="{{ asset('storage/' . $user->avatar) }}" class="rounded-circle d-inline-block mr-3" height="120px" width="120px" alt="avatar">
       </div>
       <div class="col-8 mt-2">
         <div class="d-flex">
