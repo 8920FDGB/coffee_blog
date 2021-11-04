@@ -63,6 +63,9 @@
                         @enderror
                     </div>
 
+                    <!-- Avatar最初はサムプル画像統一、後でマイページで設定 -->
+                    <input type="hidden" name="avatar" value="avatar/avatar01.jpg">
+
                     <!-- Sign up button -->
                     <button class="btn btn-outline-brown waves-effect rounded-lg btn-block my-4" type="submit">登録する</button>
 
