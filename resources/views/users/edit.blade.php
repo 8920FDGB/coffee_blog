@@ -21,7 +21,7 @@
                 <div class="card-body px-lg-5 pt-0">
 
                     <!-- Form -->
-                    <form class="text-center" method="POST" action="{{ route('users.update', ['id' => $user->id]) }}">
+                    <form class="" method="POST" action="{{ route('users.update', ['id' => $user->id]) }}">
                         @csrf
                         @method('PUT')
                         <!-- name -->
@@ -42,12 +42,15 @@
                             @enderror
                         </div>
 
+                        <!-- User Icon -->
+                        <div class="pb-2 mb-4 border-bottom">
+                            <label for="" class="small text-muted d-block">ユーザーアイコン</label>
+                            <label for="thumbnail" class="btn btn-brown ">ファイルを選択</label>
+                            <input type="file" name="thumbnail" id="thumbnail" accept=".png, .jpg, .jpeg, .pdf, .doc" class="d-none">
+                        </div>
+
                         <!-- Sign up button -->
                         <button class="btn btn-outline-brown waves-effect rounded-lg btn-block my-4" type="submit">変更を保存する</button>
-
-                        <div class="mt-0">
-                            <a href="{{ route('register') }}" class="card-text">ユーザー登録はこちら</a>
-                        </div>
 
                     </form>
                     <!-- Form -->

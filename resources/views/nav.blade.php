@@ -36,7 +36,8 @@
         <div class="dropdown-menu dropdown-menu-right dropdown-default"
           aria-labelledby="navbarDropdownMenuLink-333">
           <a class="dropdown-item" href="{{ route('users.show', ['id' => Auth::user()]) }}">マイページ</a>
-          <button type="submit" form="logout-button" class="dropdown-item" href="{{ route('logout') }}">
+          <a class="dropdown-item" href="{{ route('users.edit', ['id' => Auth::user()]) }}">ユーザー情報編集</a>
+          <button type="submit" form="logout-button" class="dropdown-item pl-2" href="{{ route('logout') }}">
             ログアウト
           </button>
         </div>
