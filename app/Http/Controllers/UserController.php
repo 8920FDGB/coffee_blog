@@ -27,7 +27,13 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $user = Auth::user();
-        $user->fill($request->all())->save();
+        $user->fill($request->all());
+        // ユーザーアイコンの画像ファイルがあれば設定
+        if ($request->avatar) {
+            $user->avatar = $request->avatar->store('avatar', 'public');
+        }
+
+        $user->save();
 
         return redirect()->route('users.show', ['id' => $user->id]);
     }

@@ -21,7 +21,7 @@
                 <div class="card-body px-lg-5 pt-0">
 
                     <!-- Form -->
-                    <form class="" method="POST" action="{{ route('users.update', ['id' => $user->id]) }}">
+                    <form class="" method="POST"  enctype="multipart/form-data" action="{{ route('users.update', ['id' => $user->id]) }}">
                         @csrf
                         @method('PUT')
                         <!-- name -->
@@ -45,8 +45,8 @@
                         <!-- User Icon -->
                         <div class="pb-2 mb-4 border-bottom">
                             <label for="" class="small text-muted d-block">ユーザーアイコン</label>
-                            <label for="thumbnail" class="btn btn-brown ">ファイルを選択</label>
-                            <input type="file" name="thumbnail" id="thumbnail" accept=".png, .jpg, .jpeg, .pdf, .doc" class="d-none">
+                            <label for="avatar" class="btn btn-brown ">ファイルを選択</label>
+                            <input type="file" name="avatar" id="avatar" accept=".png, .jpg, .jpeg, .pdf, .doc" class="d-none">
                         </div>
 
                         <!-- Sign up button -->
