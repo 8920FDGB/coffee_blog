@@ -31,7 +31,7 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user"></i>
+          <img src="{{ asset('storage/' . $article->user->avatar) }}" class="rounded-circle d-inline-block vertical-center" height="30px" width="30px" alt="avatar">
         </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-default"
           aria-labelledby="navbarDropdownMenuLink-333">

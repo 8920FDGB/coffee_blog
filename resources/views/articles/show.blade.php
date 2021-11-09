@@ -3,9 +3,6 @@
 @section('title', $article->title)
 
 @section('content')
-
-  @include('nav')
-
   <div class="container">
     <div class="row">
       <div class="col mx-auto mt-5 col-12 col-md-10 col-lg-7 col-xl-6">

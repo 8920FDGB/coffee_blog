@@ -3,9 +3,6 @@
 @section('title', '記事一覧')
 
 @section('content')
-  <!--Navbar -->
-  @include('nav')
-  <!--/.Navbar -->
 
   <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">

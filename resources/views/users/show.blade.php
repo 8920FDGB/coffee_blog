@@ -4,8 +4,6 @@
 
 @section('content')
 
-  @include('nav')
-
   <div class="container">
     <div class="row justify-content-md-center pt-4 mt-5">
       <div class="col-2">
