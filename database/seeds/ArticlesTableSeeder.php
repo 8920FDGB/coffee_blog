@@ -12,6 +12,6 @@ class ArticlesTableSeeder extends Seeder
     public function run()
     {
         // 記事のダミーデータを生成
-        factory(App\Article::class, 30)->create();
+        factory(App\Article::class, 50)->create();
     }
 }

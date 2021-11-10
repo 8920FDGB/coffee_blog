@@ -18,6 +18,7 @@ class CategoriesTableSeeder extends Seeder
             'コーヒーメーカー',
             'グッズ',
             'カフェ',
+            'ライフスタイル',
             'その他',
         ];
 
